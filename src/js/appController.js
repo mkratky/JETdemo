@@ -96,7 +96,7 @@ define(['ojs/ojcore', 'ojs/ojrouter', 'ojs/ojarraytabledatasource', 'ojs/ojmodul
       
                 // Url/Path to the augmented reality experience you would like to load
 //                self.arExperienceUrl = "www/wikitude/01_ImageRecognition_1_ImageOnTarget/index.html";
-                self.arExperienceUrl = "wikitude/01_ImageRecognition_1_ImageOnTarget/index.html";
+                self.arExperienceUrl = "wikitude/01_ImageTracking_1_ImageOnTarget/index.html";
                 // The features your augmented reality experience requires, only define the ones you really need
                 self.requiredFeatures = ["image_tracking"];
                 // Represents the device capability of launching augmented reality experiences with specific features
