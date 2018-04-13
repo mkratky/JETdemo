@@ -4,10 +4,6 @@
  -->
  
 <h3>Image Tracking JET Sample</h3>
-<div>
-         <button id= "button" data-bind="click: buttonClick, ojComponent: { component: 'ojButton', label: 'Launch AR Experience' }">
-         </button>
-</div>
             
 <div class="oj-hybrid-applayout-page">
   <div class="oj-applayout-fixed-top">
@@ -23,9 +19,16 @@
   <div class="oj-applayout-content">
     <div role="main" class="oj-hybrid-applayout-content">
       <div class="oj-hybrid-padding">
-        <h1>Dashboard Content Area</h1>
+        <h1>Dashboard Content</h1>
         <div>
-            To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+            <div>
+                <button id= "button" data-bind="click: buttonClick, ojComponent: { component: 'ojButton', label: 'Launch AR Img Experience' }">
+                </button>
+            </div>
+            <div>
+                <button id= "button" data-bind="click: buttonClick1, ojComponent: { component: 'ojButton', label: 'Launch AR Geo Experience' }">
+                </button>
+            </div>
         </div>
       </div>
     </div>

@@ -96,9 +96,11 @@ define(['ojs/ojcore', 'ojs/ojrouter', 'ojs/ojarraytabledatasource', 'ojs/ojmodul
       
                 // Url/Path to the augmented reality experience you would like to load
 //                self.arExperienceUrl = "www/wikitude/01_ImageRecognition_1_ImageOnTarget/index.html";
-                self.arExperienceUrl = "wikitude/01_ImageTracking_1_ImageOnTarget/index.html";
+                self.arExperienceUrl = "www/wikitude/01_ImageTracking_1_ImageOnTarget/index.html";
+                self.arExperienceUrl1 = "www/wikitude/10_BrowsingPois_1_PresentingDetails/index.html";
                 // The features your augmented reality experience requires, only define the ones you really need
                 self.requiredFeatures = ["image_tracking"];
+                self.requiredFeatures1 = ["geo"];
                 // Represents the device capability of launching augmented reality experiences with specific features
                 self.isDeviceSupported = false;
                 // Additional startup settings, for now the only setting available is camera_position (back|front)
@@ -113,6 +115,12 @@ define(['ojs/ojcore', 'ojs/ojrouter', 'ojs/ojarraytabledatasource', 'ojs/ojmodul
      
                     self.wikitudePlugin.isDeviceSupported(self.onDeviceSupported, self.onDeviceNotSupported, self.requiredFeatures);
                 };
+                self.initialiseWikitude1 = function () {
+     
+                    self.wikitudePlugin = cordova.require("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin");
+     
+                    self.wikitudePlugin.isDeviceSupported(self.onDeviceSupported1, self.onDeviceNotSupported, self.requiredFeatures1);
+                };
 
                 // Callback if the device supports all required features
                 self.onDeviceSupported = function () {
@@ -123,6 +131,18 @@ define(['ojs/ojcore', 'ojs/ojrouter', 'ojs/ojarraytabledatasource', 'ojs/ojmodul
                             self.onARExperienceLoadError,
                             self.arExperienceUrl,
                             self.requiredFeatures,
+                            self.startupConfiguration
+                            );
+
+                };
+                self.onDeviceSupported1 = function () {
+                    console.log("wikitude: onDeviceSupported");
+
+                    self.wikitudePlugin.loadARchitectWorld(
+                            self.onARExperienceLoadedSuccessful,
+                            self.onARExperienceLoadError,
+                            self.arExperienceUrl1,
+                            self.requiredFeatures1,
                             self.startupConfiguration
                             );
 

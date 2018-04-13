@@ -74,6 +74,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController'],
                     app.initialiseWikitude();
                     return true;
       };
+      self.buttonClick1 = function (data, event) {
+                    app.initialiseWikitude1();
+                    return true;
+      };
     }
 
     /*
